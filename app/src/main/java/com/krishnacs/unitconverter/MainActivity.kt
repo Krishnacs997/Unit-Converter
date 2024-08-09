@@ -90,11 +90,3 @@ fun Greeting(name: String = "Krishna", modifier: Modifier = Modifier) {
         Text(text = "Result: ")
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    UnitConverterTheme {
-        Greeting("Android")
-    }
-}

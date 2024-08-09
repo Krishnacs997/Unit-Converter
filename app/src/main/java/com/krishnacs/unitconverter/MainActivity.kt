@@ -52,9 +52,11 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun Greeting(name: String = "Krishna", modifier: Modifier = Modifier) {
-    Column(modifier = Modifier.fillMaxSize(),
+    Column(
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally){
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Text(text = "Unit converter")
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(value = "", onValueChange = {
@@ -64,28 +66,30 @@ fun Greeting(name: String = "Krishna", modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(12.dp))
         Row {
             val ctx = LocalContext.current
-            Box{
-                Button(onClick = { Toast.makeText(ctx, "Button clicked", Toast.LENGTH_LONG).show() }) {
+            Box {
+                Button(onClick = {
+                    Toast.makeText(ctx, "Button clicked", Toast.LENGTH_LONG).show()
+                }) {
                     Text(text = "Select")
                     Icon(Icons.Default.ArrowDropDown, contentDescription = "Array drop down")
                 }
 
                 DropdownMenu(expanded = false, onDismissRequest = { /*TODO*/ }) {
-                    DropdownMenuItem(text = {Text( "CM")}, onClick = { /*TODO*/ })
-                    DropdownMenuItem(text = {Text( "Inc")}, onClick = { /*TODO*/ })
-                    DropdownMenuItem(text = {Text( "Feet")}, onClick = { /*TODO*/ })
-                    DropdownMenuItem(text = {Text( "mm")}, onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text("CM") }, onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text("Inc") }, onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text("Feet") }, onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text("mm") }, onClick = { /*TODO*/ })
                 }
             }
             Spacer(modifier = Modifier.width(12.dp))
-            Box{
-                Button(onClick = { Toast.makeText(ctx, "Button clicked", Toast.LENGTH_LONG).show() }) {
+            Box {
+                Button(onClick = {
+                    Toast.makeText(ctx, "Button clicked", Toast.LENGTH_LONG).show()
+                }) {
                     Text(text = "Select")
                     Icon(Icons.Default.ArrowDropDown, contentDescription = "Array drop down")
                 }
             }
-
-
         }
         Text(text = "Result: ")
     }
